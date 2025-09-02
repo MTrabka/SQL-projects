@@ -73,3 +73,9 @@ The focus was on finding memorable facts (best-selling items, peak hours, quirky
 
 In this project, I explored a dataset of startups to calculate key statistics and practice SQL aggregations.  
 The table contained information such as company name, category, location, number of employees, valuation, amount raised, and founding year.
+
+**Skills Practiced:**
+- Aggregate functions (`COUNT`, `SUM`, `MAX`, `MIN`, `AVG`, `ROUND`)  
+- Grouping and filtering with `GROUP BY` and `HAVING`  
+- Sorting results with `ORDER BY`  
+- Applying conditions within aggregate queries  
