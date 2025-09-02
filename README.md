@@ -9,6 +9,7 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 3 – RPA Fraud Detection**: detecting suspicious transactions using filtering, pattern matching, and anomaly checks.
 - **Project 4 – RPA Customer Segmentation**: generating marketing segments based on user attributes, campaigns, and tests.
 - **Project 5 – Davie’s Burgers Subway Ad**: analyzing restaurant orders to uncover fun and creative insights for advertising.
+- **Project 6 – Trends in Startups**: exploring startup data with aggregation, grouping, filtering, and ordering.
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -67,3 +68,8 @@ The focus was on finding memorable facts (best-selling items, peak hours, quirky
 - Text/pattern work for item names and modifiers
 - Basic segmentation (by hour, weekday, item category)
 - (Optional) pairs/combos analysis and simple window functions
+
+### Project 6: Trends in Startups
+
+In this project, I explored a dataset of startups to calculate key statistics and practice SQL aggregations.  
+The table contained information such as company name, category, location, number of employees, valuation, amount raised, and founding year.
