@@ -1,0 +1,49 @@
+-- TASK 1 - 10 columns
+SELECT *
+FROM startups
+LIMIT 5;
+-- TASK 2 Calculate the total number of companies in the table - 70.
+SELECT COUNT(*) FROM startups;
+-- TASK 3 We want to know the total value of all companies in this table. - 974455790000
+SELECT SUM(valuation) FROM startups;
+-- TASK 4 What is the highest amount raised by a startup - 11500000000?
+SELECT MAX(raised) FROM startups;
+-- TASK 5 Edit the query so that it returns the maximum amount of money raised, during ‘Seed’ stage. - 1800000
+SELECT MAX(raised) FROM startups
+WHERE stage ='Seed';
+
+-- TASK 6 In what year was the oldest company on the list founded - 1994?
+SELECT MIN(founded) FROM startups;
+-- TASK 7 Return the average valuation - 15974685081.9672.
+SELECT AVG(valuation) FROM startups;
+-- TASK 8 Return the average valuation, in each category
+SELECT category,AVG(valuation) FROM startups
+GROUP BY category;
+-- TASK 9 Round the averages to two decimal places
+SELECT category, ROUND(AVG(valuation),2) FROM startups
+GROUP BY category;
+-- TASK 10 Lastly, order the list from highest averages to lowest
+SELECT category, ROUND(AVG(valuation),2) FROM startups
+GROUP BY category
+ORDER BY ROUND(AVG(valuation),2) DESC;
+
+-- TASK 11 First, return the name of each category with the total number of companies that belong to it.
+
+SELECT category, COUNT(*) AS 'count' FROM startups
+GROUP BY category;
+
+-- TASK 12 Next, filter the result to only include categories that have more than three companies in them.
+SELECT category, COUNT(*) AS 'count' FROM startups
+GROUP BY category
+HAVING count>3
+ORDER BY count DESC;
+
+-- TASK 13 What is the average size of a startup in each location?
+
+SELECT location,AVG(employees) AS avg_size FROM startups 
+GROUP BY location;
+
+-- TASK 14 What is the average size of a startup in each location, with average sizes above 500?
+SELECT location,AVG(employees) AS avg_size FROM startups 
+GROUP BY location
+HAVING avg_size > 500;
