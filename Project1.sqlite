@@ -1,0 +1,60 @@
+/* TASK 1
+Create a table named friends with three columns:
+
+id that stores INTEGER
+name that stores TEXT
+birthday that stores DATE
+*/
+CREATE TABLE friends(
+  id INTEGER,
+  name TEXT,
+  birthday DATE
+);
+/* TASK 2
+Beneath your current code, add Ororo Munroe to friends.
+Her birthday is May 30th, 1940.
+*/
+INSERT INTO friends (id, name, birthday)
+VALUES (1, 'Ororo Munroe', '1940-05-30');
+/* TASK 3
+Let’s make sure that Ororo has been added to the database:
+SELECT * FROM friends;
+Check for two things:
+Is friends table created?
+Is Ororo Munroe added to it?
+*/
+
+/* TASK 4
+Add two of your friends to the table.
+Insert an id, name, and birthday for each of them.
+*/
+
+INSERT INTO friends (id, name, birthday)
+VALUES (2, 'John Doe', '1955-02-22');
+INSERT INTO friends (id, name, birthday)
+VALUES (3, 'Gwenn Johnson', '1999-10-09');
+
+/* TASK 5
+Ororo Munroe just realized that she can control the weather and decided to change her name. Her new name is “Storm”.
+Update her record in friends.
+*/
+
+UPDATE friends SET name = 'Storm' WHERE id=1;
+/* TASK 6
+Add a new column named email. 
+*/
+ALTER TABLE friends ADD COLUMN 'email';
+
+/* TASK 7
+Update the email address for everyone in your table.
+Storm’s email is storm@codecademy.com.
+*/
+UPDATE friends SET email = 'storm@codecademy.com' WHERE id=1;
+UPDATE friends SET email = 'john@codecademy.com' WHERE id=2;
+UPDATE friends SET email = 'gwenn@codecademy.com' WHERE id=3;
+/* TASK 8
+Wait, Storm is fictional…
+Remove her from friends.
+*/
+DELETE FROM friends WHERE id=1;
+SELECT * FROM friends;
