@@ -7,7 +7,8 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 1 – Create a Table**: practice with table creation, data insertion, updating, altering schema, and deletion.  
 - **Project 2 – New York Restaurants**: data exploration and analysis using filtering, sorting, and conditional logic.
 - **Project 3 – RPA Fraud Detection**: detecting suspicious transactions using filtering, pattern matching, and anomaly checks.
-- **Project 4 – RPA Customer Segmentation**: generating marketing segments based on user attributes, campaigns, and tests. 
+- **Project 4 – RPA Customer Segmentation**: generating marketing segments based on user attributes, campaigns, and tests.
+- **Project 5 – Davie’s Burgers Subway Ad**: analyzing restaurant orders to uncover fun and creative insights for advertising.
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -47,11 +48,22 @@ The main goal was to practice filtering, pattern matching, and working with real
 In this project, I worked with a dataset of users (`users` table) to generate marketing segments for the company.  
 Segments are subsets of users that meet different conditions and can be used for targeted campaigns.  
 
-
 **Skills Practiced:**
 - Date filtering with `BETWEEN` and comparison operators  
 - Working with `created_at` timestamps  
 - Using `LIKE` for pattern matching  
 - Segmenting data with multiple conditions  
 - Table modification (`ALTER TABLE`) and updating records (`UPDATE ... SET`)  
-- Calculating derived values (age at signup) using `strftime()`  
+- Calculating derived values (age at signup) using `strftime()`
+
+### Project 5: Davie’s Burgers Subway Ad
+
+In this project, I explored the **orders** data for Davie’s Burgers to uncover fun, ad-worthy insights for a subway campaign.  
+The focus was on finding memorable facts (best-selling items, peak hours, quirky combos) that could inspire a catchy tagline.
+
+**Skills Practiced:**
+- Aggregations and ranking (`COUNT`, `SUM`, `AVG`, `GROUP BY`, `ORDER BY`, `LIMIT`)
+- Time bucketing and date functions (hour/day-of-week extraction)
+- Text/pattern work for item names and modifiers
+- Basic segmentation (by hour, weekday, item category)
+- (Optional) pairs/combos analysis and simple window functions
