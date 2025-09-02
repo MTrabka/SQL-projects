@@ -10,6 +10,7 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 4 – RPA Customer Segmentation**: generating marketing segments based on user attributes, campaigns, and tests.
 - **Project 5 – Davie’s Burgers Subway Ad**: analyzing restaurant orders to uncover fun and creative insights for advertising.
 - **Project 6 – Trends in Startups**: exploring startup data with aggregation, grouping, filtering, and ordering.
+- **Project 7 – The Metropolitan Museum of Art**: analyzing artwork data to find counts, categories, origins, and material patterns.
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -78,4 +79,16 @@ The table contained information such as company name, category, location, number
 - Aggregate functions (`COUNT`, `SUM`, `MAX`, `MIN`, `AVG`, `ROUND`)  
 - Grouping and filtering with `GROUP BY` and `HAVING`  
 - Sorting results with `ORDER BY`  
-- Applying conditions within aggregate queries  
+- Applying conditions within aggregate queries
+
+### Project 7: The Metropolitan Museum of Art
+
+In this project, I explored artwork data from the Metropolitan Museum of Art.  
+The goal was to practice filtering, grouping, and aggregating data to uncover insights about the collection.
+
+**Skills Practiced:**
+- Aggregate functions (`COUNT`, `MIN`)  
+- String matching with `LIKE`  
+- Grouping and filtering (`GROUP BY`, `HAVING`)  
+- Ordering and limiting results (`ORDER BY`, `LIMIT`)  
+- Conditional grouping using `CASE`  
