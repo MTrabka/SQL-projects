@@ -1,0 +1,53 @@
+ -- TASK 1 
+ SELECT *
+FROM met
+LIMIT 10;
+
+-- TASK 2 How many pieces are in the American Decorative Art collection? 3948
+
+SELECT COUNT(*)
+FROM met;
+
+-- TASK 3 Count the number of pieces where the category includes ‘celery’ 31
+
+SELECT COUNT(*) FROM met
+WHERE category LIKE '%celery%';
+
+-- TASK 4 Find the title and medium of the oldest piece(s) in the collection.
+
+SELECT MIN(date)
+FROM met;
+SELECT date, title, medium
+FROM met
+WHERE date LIKE '%1600%';
+
+-- TASK 5 Find the top 10 countries with the most pieces in the collection.
+
+SELECT COUNT(*), country FROM met
+GROUP BY country
+ORDER BY COUNT(*) DESC
+LIMIT 10;
+
+-- TASK 6 Find the categories HAVING more than 100 pieces
+
+SELECT category, COUNT(*) FROM met 
+GROUP BY category
+HAVING COUNT(*)>100;
+
+-- TASK 7 Count the number of pieces where the medium contains ‘gold’ or ‘silver’.
+
+SELECT medium, COUNT(*) FROM met 
+WHERE medium LIKE '%gold%' OR medium LIKE '%silver%'
+GROUP BY medium
+ORDER BY COUNT(*) DESC;
+
+SELECT CASE
+   WHEN medium LIKE '%gold%'   THEN 'Gold'
+   WHEN medium LIKE '%silver%' THEN 'Silver'
+   ELSE NULL
+  END AS 'Bling',
+  COUNT(*)
+FROM met
+WHERE Bling IS NOT NULL
+GROUP BY 1
+ORDER BY 2 DESC;
