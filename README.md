@@ -5,7 +5,8 @@ It documents my progress in learning SQL for data analysis, database management,
 
 ## 📂 Repository Structure
 - **Project 1 – Create a Table**: practice with table creation, data insertion, updating, altering schema, and deletion.  
-- **Project 2 – New York Restaurants**: data exploration and analysis using filtering, sorting, and conditional logic.  
+- **Project 2 – New York Restaurants**: data exploration and analysis using filtering, sorting, and conditional logic.
+- **Project 3 – RPA Fraud Detection**: detecting suspicious transactions using filtering, pattern matching, and anomaly checks.   
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -26,4 +27,16 @@ The goal was to practice writing SQL queries to explore the data and answer spec
 - Filtering with `WHERE` (including `AND`, `OR`, `LIKE`)  
 - Handling missing values (`IS NULL`)  
 - Sorting and limiting results (`ORDER BY ... LIMIT`)  
-- Using `CASE` for conditional logic in queries  
+- Using `CASE` for conditional logic in queries
+
+### Project 3: RPA Fraud Detection
+
+In this project, I analyzed a dataset of credit card transactions (`transaction_data`) to help the finance department identify potentially fraudulent activity.  
+The main goal was to practice filtering, pattern matching, and working with real-world fraud detection scenarios.  
+
+**Skills Practiced:**
+- Data exploration (`SELECT * ... LIMIT`)  
+- Conditional filtering with `WHERE`  
+- Pattern matching with `LIKE` and wildcards  
+- Filtering by domain (email checks with `LIKE '%@temp_email.com'`)  
+- Identifying anomalies in data (ZIP codes, IP ranges)  
