@@ -16,6 +16,7 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 10 – Lyft Trip Data**: joining multiple tables to analyze trips, riders, and autonomous cars.
 - **Project 11 – Welp**: joining places with reviews, building 2020 review logs, and spotting below-average “difficult” reviewers.
 - **Project 12 - Multiple Tables with Reddit**: combining users, posts, and subreddits data to analyze popularity and engagement.
+- **Project 13 – VR Startup Company**: staffing analysis, project selection stats, developer headcount needs, and personality-compatibility checks.
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -157,3 +158,17 @@ The tasks covered everything from exploring the schema to combining data across 
 - Stacking tables with `UNION`
 - Common Table Expressions (`WITH`) for temporary queries
 - Filtering and ordering results for insights (e.g., most popular posts, highest scoring subreddit posts, average scores by subreddit)
+
+### Project 13: VR Startup Company
+
+In this project, I analyzed employee and project data for **Codecademy Virtual Reality (CVR), Inc.** to ensure projects can be staffed efficiently.  
+Each project requires a Project Manager, Team Lead, Designer, DBA, and **at least two Developers**. I explored who hasn’t chosen a project, which projects lack staff, which projects attract the most employees, and whether we have enough developers.  
+As a bonus, I used Myers–Briggs personality rules to surface the most common personality, see which projects they prefer, and compute—per employee—the number of incompatible co-workers.
+
+**Skills Practiced:**
+- Table exploration and schema reasoning  
+- Joins for staffing insights (`INNER JOIN`, `LEFT JOIN`)  
+- Anti-joins with subqueries (`NOT IN`)  
+- Aggregations and grouping (`COUNT`, `GROUP BY`, `HAVING`, `ORDER BY`)  
+- Headcount math with scalar subqueries (e.g., developer slots per project)  
+- Conditional logic with `CASE` and subqueries to apply compatibility rules 
