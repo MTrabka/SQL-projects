@@ -144,7 +144,7 @@ I explored price filters, built a log of **2020 reviews** using a CTE, searched 
 - Text search and pattern matching (`LIKE '%...%'`)  
 - Column aliases and basic readability improvements (`AS`)  
 
-Project 12: Multiple Tables with Reddit
+### Project 12: Multiple Tables with Reddit
 
 In this project, I analyzed fictional Reddit data using three tables: users, posts, and subreddits.
 The tasks covered everything from exploring the schema to combining data across tables with joins, stacking tables, and writing more advanced queries with `WITH`.
