@@ -14,6 +14,7 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 8 – Hacker News Trends**: analyzing Hacker News posts to uncover user behavior, content sources, and posting patterns.
 - **Project 9 – Cryptocurrency Exchange**: analyzing digital currency transactions to understand trading activity and trends.
 - **Project 10 – Lyft Trip Data**: joining multiple tables to analyze trips, riders, and autonomous cars.
+- **Project 11 – Welp**: joining places with reviews, building 2020 review logs, and spotting below-average “difficult” reviewers.
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -126,4 +127,18 @@ In this project, I worked with three related tables — `trips`, `riders`, and `
 - Combining datasets with `UNION`  
 - Filtering with `WHERE` and comparisons  
 - Aggregate functions (`AVG`, `COUNT`)  
-- Sorting and limiting results (`ORDER BY ... LIMIT`)  
+- Sorting and limiting results (`ORDER BY ... LIMIT`)
+
+### Project 11: Welp
+
+In this project, I analyzed a local-reviews dataset by combining **places** with **reviews** to answer practical product questions.  
+I explored price filters, built a log of **2020 reviews** using a CTE, searched special instructions/notes for fun marketing snippets, and identified “difficult reviewers” with below-average ratings.
+
+**Skills Practiced:**
+- Table joins (`LEFT JOIN`, `INNER JOIN`)  
+- Common Table Expressions (`WITH`)  
+- Date handling with `strftime('%Y', ...)`  
+- Aggregations and grouping (`COUNT`, `AVG`, `GROUP BY`, `HAVING`)  
+- Filtering with subqueries/CTEs (e.g., **below global average** ratings)  
+- Text search and pattern matching (`LIKE '%...%'`)  
+- Column aliases and basic readability improvements (`AS`)  
