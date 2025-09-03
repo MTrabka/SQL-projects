@@ -11,6 +11,7 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 5 – Davie’s Burgers Subway Ad**: analyzing restaurant orders to uncover fun and creative insights for advertising.
 - **Project 6 – Trends in Startups**: exploring startup data with aggregation, grouping, filtering, and ordering.
 - **Project 7 – The Metropolitan Museum of Art**: analyzing artwork data to find counts, categories, origins, and material patterns.
+- **Project 8 – Hacker News Trends**: analyzing Hacker News posts to uncover user behavior, content sources, and posting patterns.
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -91,4 +92,15 @@ The goal was to practice filtering, grouping, and aggregating data to uncover in
 - String matching with `LIKE`  
 - Grouping and filtering (`GROUP BY`, `HAVING`)  
 - Ordering and limiting results (`ORDER BY`, `LIMIT`)  
-- Conditional grouping using `CASE`  
+- Conditional grouping using `CASE`
+
+  ### Project 8: Hacker News Trends
+
+In this project, I analyzed a dataset of Hacker News stories (`hacker_news` table) to uncover insights into user activity, posting behavior, and content trends.  
+
+**Skills Practiced:**
+- Aggregate functions with `GROUP BY` and `HAVING`  
+- Conditional logic with `CASE`  
+- Filtering and string matching (`LIKE`)  
+- Working with dates and times using `strftime()`  
+- Sorting, limiting results, and rounding (`ROUND`)  
