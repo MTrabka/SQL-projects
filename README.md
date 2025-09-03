@@ -13,6 +13,7 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 7 – The Metropolitan Museum of Art**: analyzing artwork data to find counts, categories, origins, and material patterns.
 - **Project 8 – Hacker News Trends**: analyzing Hacker News posts to uncover user behavior, content sources, and posting patterns.
 - **Project 9 – Cryptocurrency Exchange**: analyzing digital currency transactions to understand trading activity and trends.
+- **Project 10 – Lyft Trip Data**: joining multiple tables to analyze trips, riders, and autonomous cars.
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -116,3 +117,13 @@ The dataset (`transactions` table) included both money-in and money-out flows ac
 - Filtering data with `WHERE`  
 - Grouping and summarizing with `GROUP BY`  
 - Using aliases (`AS`) for clearer output  
+### Project 10: Lyft Trip Data
+
+In this project, I worked with three related tables — `trips`, `riders`, and `cars` — to practice joining data and answering business questions for Lyft.  
+
+**Skills Practiced:**
+- Table joins (`LEFT JOIN`, `INNER JOIN`, `CROSS JOIN`)  
+- Combining datasets with `UNION`  
+- Filtering with `WHERE` and comparisons  
+- Aggregate functions (`AVG`, `COUNT`)  
+- Sorting and limiting results (`ORDER BY ... LIMIT`)  
