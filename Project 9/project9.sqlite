@@ -1,0 +1,37 @@
+SELECT *
+FROM transactions;
+
+-- TASK 2 What is the total money_in in the table? 17173.0
+SELECT SUM(money_in) FROM transactions;
+
+-- TASK 3 What is the total money_out in the table?33417.0
+SELECT SUM(money_out) FROM transactions;
+
+/* TASK 4 It was reported that Bitcoin dominates Fiddy Cent’s exchange. Let’s see if it is true within these dates by answering two questions:
+
+How many money_in transactions are in this table?  43
+How many money_in transactions are in this table where ‘BIT’ is the currency? 21*/
+SELECT COUNT(money_in) FROM transactions
+WHERE money_in IS NOT NULL;
+SELECT COUNT(money_in) FROM transactions
+WHERE currency = 'BIT' AND money_in IS NOT NULL;
+
+-- TASK 5 What was the largest transaction in this whole table? MAX(money_in) = 6000.0	MAX(money_out) = 15047.0
+
+SELECT MAX(money_in), MAX(money_out) FROM transactions;
+
+-- TASK 6 What is the average money_in in the table for the currency Ethereum (‘ETH’)? 131.888888888889
+
+SELECT AVG(money_in) FROM transactions
+WHERE currency='ETH';
+
+-- TASK 7 Let’s build a ledger for the different dates.
+-- Select date, average money_in, and average money_out from the table. And group everything by date.
+
+SELECT date, AVG(money_in), AVG(money_out) FROM transactions
+GROUP BY date;
+
+-- TASK 8 To make the previous query easier to read, round the averages to 2 decimal places. Give the column aliases using AS for readability.
+
+SELECT date, ROUND(AVG(money_in),2) AS 'Average Money In', ROUND(AVG(money_out),2) AS 'Average Money Out' FROM transactions
+GROUP BY date;
