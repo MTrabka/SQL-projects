@@ -15,6 +15,7 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 9 – Cryptocurrency Exchange**: analyzing digital currency transactions to understand trading activity and trends.
 - **Project 10 – Lyft Trip Data**: joining multiple tables to analyze trips, riders, and autonomous cars.
 - **Project 11 – Welp**: joining places with reviews, building 2020 review logs, and spotting below-average “difficult” reviewers.
+- **Project 12 - Multiple Tables with Reddit**: combining users, posts, and subreddits data to analyze popularity and engagement.
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -142,3 +143,17 @@ I explored price filters, built a log of **2020 reviews** using a CTE, searched 
 - Filtering with subqueries/CTEs (e.g., **below global average** ratings)  
 - Text search and pattern matching (`LIKE '%...%'`)  
 - Column aliases and basic readability improvements (`AS`)  
+
+Project 12: Multiple Tables with Reddit
+
+In this project, I analyzed fictional Reddit data using three tables: users, posts, and subreddits.
+The tasks covered everything from exploring the schema to combining data across tables with joins, stacking tables, and writing more advanced queries with `WITH`.
+
+**Skills Practiced:**
+
+- Exploring relational databases and identifying primary/foreign keys
+- Aggregation (`COUNT`, `AVG`, `MAX`)
+- `LEFT JOIN` and `INNER JOIN` for combining tables
+- Stacking tables with `UNION`
+- Common Table Expressions (`WITH`) for temporary queries
+- Filtering and ordering results for insights (e.g., most popular posts, highest scoring subreddit posts, average scores by subreddit)
