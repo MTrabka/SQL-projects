@@ -1,1 +1,149 @@
+SELECT * 
+FROM employees;
+SELECT * 
+FROM projects;
+
+-- TASK 3 What are the names of employees who have not chosen a project?
+SELECT first_name, last_name
+FROM employees
+WHERE current_project IS NULL;
+-- TASK 4 What are the names of employees who have not chosen a project?
+SELECT project_name 
+FROM projects
+WHERE project_id NOT IN (
+   SELECT current_project
+   FROM employees
+   WHERE current_project IS NOT NULL);
+
+-- TASK 5 What is the name of the project chosen by the most employees?
+SELECT project_name
+FROM projects
+INNER JOIN employees 
+  ON projects.project_id = employees.current_project
+WHERE current_project IS NOT NULL
+GROUP BY project_name
+ORDER BY COUNT(employee_id) DESC
+LIMIT 1;
+
+-- TASK 6 Which projects were chosen by multiple employees?
+SELECT project_name
+FROM projects
+INNER JOIN employees 
+  ON projects.project_id = employees.current_project
+WHERE current_project IS NOT NULL
+GROUP BY current_project
+HAVING COUNT(current_project) > 1;
+
+/* TASK 7 
+Each project needs at least 2 developers. How many available project positions are there for developers? Do we have enough developers to fill the needed positions?
+
+We will learn how to do this in the last chapters of this course! Take a look at the hint to get a preview.*/
+SELECT (COUNT(*) * 2) - (
+  SELECT COUNT(*)
+  FROM employees
+  WHERE current_project IS NOT NULL
+    AND position = 'Developer') AS 'Count'
+FROM projects;
+
+/* TASK 8-9
+
+When employees are hired at CVR, they are given the Myers-Briggs personality test. We try to diminish tension among team members by creating teams based on compatible personalities.
+
+The chart shows which personality matches should be avoided. For example, an employee with the ISFP personality type should not be matched with an INFP, ENFP, or an INFJ.
+
+Which personality is the most common across our employees?*/
+SELECT personality 
+FROM employees
+GROUP BY personality
+ORDER BY COUNT(personality) DESC
+LIMIT 1;
+
+-- TASK 10 What are the names of projects chosen by employees with the most common personality type?
+
+SELECT project_name 
+FROM projects
+INNER JOIN employees 
+  ON projects.project_id = employees.current_project
+WHERE personality = (
+   SELECT personality
+   FROM employees
+   GROUP BY personality
+   ORDER BY COUNT(personality) DESC
+   LIMIT 1);
+
+-- TASK 11 Find the personality type most represented by employees with a selected project. What are names of those employees, the personality type, and the names of the project they’ve chosen?
+
+SELECT last_name, first_name, personality, project_name
+FROM employees
+INNER JOIN projects 
+  ON employees.current_project = projects.project_id
+WHERE personality = (
+   SELECT personality 
+   FROM employees
+   WHERE current_project IS NOT NULL
+   GROUP BY personality
+   ORDER BY COUNT(personality) DESC
+   LIMIT 1);
+
+-- TASK 12 For each employee, provide their name, personality, the names of any projects they’ve chosen, and the number of incompatible co-workers.
+
+SELECT 
+  e.last_name, 
+  e.first_name, 
+  e.personality, 
+  p.project_name,
+  CASE 
+    WHEN e.personality = 'INFP' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('ISFP','ESFP','ISTP','ESTP','ISFJ','ESFJ','ISTJ','ESTJ')
+    )
+    WHEN e.personality = 'ENFP' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('ISFP','ESFP','ISTP','ESTP','ISFJ','ESFJ','ISTJ','ESTJ')
+    )
+    WHEN e.personality = 'INFJ' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('ISFP','ESFP','ISTP','ESTP','ISFJ','ESFJ','ISTJ','ESTJ')
+    )
+    WHEN e.personality = 'ENFJ' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('ESFP','ISTP','ESTP','ISFJ','ESFJ','ISTJ','ESTJ')
+    )
+    WHEN e.personality = 'ISFP' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('INFP','ENFP','INFJ')
+    )
+    WHEN e.personality = 'ESFP' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('INFP','ENFP','INFJ','ENFJ')
+    )
+    WHEN e.personality = 'ISTP' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('INFP','ENFP','INFJ','ENFJ')
+    )
+    WHEN e.personality = 'ESTP' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('INFP','ENFP','INFJ','ENFJ')
+    )
+    WHEN e.personality = 'ISFJ' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('INFP','ENFP','INFJ','ENFJ')
+    )
+    WHEN e.personality = 'ESFJ' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('INFP','ENFP','INFJ','ENFJ')
+    )
+    WHEN e.personality = 'ISTJ' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('INFP','ENFP','INFJ','ENFJ')
+    )
+    WHEN e.personality = 'ESTJ' THEN (
+      SELECT COUNT(*) FROM employees 
+      WHERE personality IN ('INFP','ENFP','INFJ','ENFJ')
+    )
+    ELSE 0
+  END AS incompatible_count
+FROM employees e
+LEFT JOIN projects p 
+  ON e.current_project = p.project_id;
 
