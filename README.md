@@ -12,6 +12,7 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 6 – Trends in Startups**: exploring startup data with aggregation, grouping, filtering, and ordering.
 - **Project 7 – The Metropolitan Museum of Art**: analyzing artwork data to find counts, categories, origins, and material patterns.
 - **Project 8 – Hacker News Trends**: analyzing Hacker News posts to uncover user behavior, content sources, and posting patterns.
+- **Project 9 – Cryptocurrency Exchange**: analyzing digital currency transactions to understand trading activity and trends.
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -94,7 +95,7 @@ The goal was to practice filtering, grouping, and aggregating data to uncover in
 - Ordering and limiting results (`ORDER BY`, `LIMIT`)  
 - Conditional grouping using `CASE`
 
-  ### Project 8: Hacker News Trends
+### Project 8: Hacker News Trends
 
 In this project, I analyzed a dataset of Hacker News stories (`hacker_news` table) to uncover insights into user activity, posting behavior, and content trends.  
 
@@ -104,3 +105,14 @@ In this project, I analyzed a dataset of Hacker News stories (`hacker_news` tabl
 - Filtering and string matching (`LIKE`)  
 - Working with dates and times using `strftime()`  
 - Sorting, limiting results, and rounding (`ROUND`)  
+
+### Project 9: Cryptocurrency Exchange
+
+In this project, I analyzed transaction data from **Fiddy Cent**, a cryptocurrency exchange.  
+The dataset (`transactions` table) included both money-in and money-out flows across currencies like Bitcoin, Bitcoin Cash, Ethereum, and Litecoin.   
+
+**Skills Practiced:**
+- Aggregate functions (`SUM`, `COUNT`, `MAX`, `AVG`, `ROUND`)  
+- Filtering data with `WHERE`  
+- Grouping and summarizing with `GROUP BY`  
+- Using aliases (`AS`) for clearer output  
