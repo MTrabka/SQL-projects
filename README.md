@@ -17,6 +17,7 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 11 – Welp**: joining places with reviews, building 2020 review logs, and spotting below-average “difficult” reviewers.
 - **Project 12 - Multiple Tables with Reddit**: combining users, posts, and subreddits data to analyze popularity and engagement.
 - **Project 13 – VR Startup Company**: staffing analysis, project selection stats, developer headcount needs, and personality-compatibility checks.
+- **Project 14 – Codeflix Churn Rate**: analyzing subscription cancellations to measure churn across marketing segments. 
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -171,4 +172,25 @@ As a bonus, I used Myers–Briggs personality rules to surface the most common p
 - Anti-joins with subqueries (`NOT IN`)  
 - Aggregations and grouping (`COUNT`, `GROUP BY`, `HAVING`, `ORDER BY`)  
 - Headcount math with scalar subqueries (e.g., developer slots per project)  
-- Conditional logic with `CASE` and subqueries to apply compatibility rules 
+- Conditional logic with `CASE` and subqueries to apply compatibility rules
+
+### Project 14: Codeflix Churn Rate
+
+In this project, I analyzed subscription data for **Codeflix**, a streaming startup that wanted to measure early churn rates across different marketing segments.  
+The dataset (`subscriptions` table) contained the following fields:
+- `id` – subscription ID  
+- `subscription_start` – start date of the subscription  
+- `subscription_end` – end date of the subscription (nullable if still active)  
+- `segment` – acquisition channel (two groups: 87 and 30)  
+
+The goal was to calculate monthly churn rates during the first three months of 2017, compare them across the two segments, and determine which group had lower churn.
+
+**Skills Practiced:**
+- Data exploration (`SELECT ... LIMIT`, `DISTINCT`)  
+- Date range analysis with `MIN` and `MAX`  
+- Building a temporary months table  
+- `CROSS JOIN` to combine subscriptions with each month  
+- Using `CASE WHEN` to flag active and canceled subscriptions by segment  
+- Aggregating with `SUM` to calculate totals per month  
+- Computing churn rates (`canceled ÷ active`)  
+- Comparing churn trends across segments over time
