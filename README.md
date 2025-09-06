@@ -17,7 +17,8 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 11 – Welp**: joining places with reviews, building 2020 review logs, and spotting below-average “difficult” reviewers.
 - **Project 12 - Multiple Tables with Reddit**: combining users, posts, and subreddits data to analyze popularity and engagement.
 - **Project 13 – VR Startup Company**: staffing analysis, project selection stats, developer headcount needs, and personality-compatibility checks.
-- **Project 14 – Codeflix Churn Rate**: analyzing subscription cancellations to measure churn across marketing segments. 
+- **Project 14 – Codeflix Churn Rate**: analyzing subscription cancellations to measure churn across marketing segments.
+- **Project 15 – CoolTShirts Marketing Attribution**: analyzing campaigns, first- and last-touch attribution, and conversion rates.
 - **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
 
 ## 🚀 Projects
@@ -194,3 +195,17 @@ The goal was to calculate monthly churn rates during the first three months of 2
 - Aggregating with `SUM` to calculate totals per month  
 - Computing churn rates (`canceled ÷ active`)  
 - Comparing churn trends across segments over time
+
+### Project 15: CoolTShirts Marketing Attribution
+
+In this project, I analyzed marketing campaign data for **CoolTShirts** using the `page_visits` table.  
+The dataset contained information about user visits, campaigns (`utm_campaign`), sources (`utm_source`), and visited pages.  
+The goal was to understand which campaigns bring the most customers and which ones actually lead to purchases.
+
+**Skills Practiced:**
+- Data exploration with `DISTINCT` and filtering (`WHERE`)  
+- Common Table Expressions (`WITH`)  
+- First-touch and last-touch attribution queries (`MIN` / `MAX` on timestamp)  
+- Grouping and aggregation with `COUNT` and `GROUP BY`  
+- Calculating conversion rates using multiple CTEs  
+- Making business recommendations from SQL results  
