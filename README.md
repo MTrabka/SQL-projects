@@ -19,7 +19,8 @@ It documents my progress in learning SQL for data analysis, database management,
 - **Project 13 – VR Startup Company**: staffing analysis, project selection stats, developer headcount needs, and personality-compatibility checks.
 - **Project 14 – Codeflix Churn Rate**: analyzing subscription cancellations to measure churn across marketing segments.
 - **Project 15 – CoolTShirts Marketing Attribution**: analyzing campaigns, first- and last-touch attribution, and conversion rates.
-- **Upcoming Projects**: more case studies and exercises will be added as I advance through the course.  
+- **Project 16 – Analyze Twitch Gaming Data**: explore Twitch viewing and chat data; popularity by game/channel, geography, device, genres, hourly patterns, and joins across tables.
+
 
 ## 🚀 Projects
 
@@ -209,3 +210,20 @@ The goal was to understand which campaigns bring the most customers and which on
 - Grouping and aggregation with `COUNT` and `GROUP BY`  
 - Calculating conversion rates using multiple CTEs  
 - Making business recommendations from SQL results  
+
+### Project 16: Analyze Twitch Gaming Data
+
+Twitch is the world’s leading live streaming platform for gamers, with ~15 million daily active users. This project analyzes viewing behavior and chat activity using two tables:
+
+- `stream` — stream viewing data  
+- `chat` — chat room usage data  
+
+The practice dataset (CSV, ~800k rows) comes from the Twitch Science Team.
+
+**Skills Practiced:**
+- Data exploration (`SELECT ... LIMIT`, `DISTINCT`)
+- Aggregations & ranking (`COUNT`, `GROUP BY`, `ORDER BY`)
+- Conditional logic with `CASE`
+- Time bucketing with `strftime('%H', ...)` (SQLite)
+- Filtering by attributes (country, game)
+- Joins across tables (`INNER JOIN` on shared keys)
