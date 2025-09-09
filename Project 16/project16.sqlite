@@ -1,1 +1,91 @@
+SELECT * FROM stream
+LIMIT 20;
 
+SELECT * FROM chat
+LIMIT 20;
+
+-- TASK 2 What are the unique games in the stream table?
+
+SELECT DISTINCT game FROM stream;
+
+-- TASK 3 What are the unique channels in the stream table?
+
+SELECT DISTINCT channel FROM stream;
+
+-- TASK 4 What are the most popular games in the stream table?
+
+SELECT game, COUNT(*) FROM stream
+GROUP BY game
+ORDER BY COUNT(*) DESC;
+
+/* TASK 5 
+
+These are some big numbers from the game League of Legends (also known as LoL).
+
+Where are these LoL stream viewers located?*/
+
+SELECT country, COUNT(*) FROM stream
+WHERE game='League of Legends'
+GROUP BY country
+ORDER BY COUNT(*) DESC;
+
+/* TASK 6 
+The player column contains the source the user is using to view the stream (site, iphone, android, etc).
+
+Create a list of players and their number of streamers.
+*/
+SELECT player, COUNT(*)
+FROM stream
+GROUP BY 1
+ORDER BY 2 DESC;
+
+/* TASK 7
+Create a new column named genre for each of the games.
+
+Group the games into their genres: Multiplayer Online Battle Arena (MOBA), First Person Shooter (FPS), Survival, and Other.
+
+Using CASE, your logic should be:
+
+If League of Legends → MOBA
+If Dota 2 → MOBA
+If Heroes of the Storm → MOBA
+If Counter-Strike: Global Offensive → FPS
+If DayZ → Survival
+If ARK: Survival Evolved → Survival
+Else → Other*/
+
+SELECT game, CASE
+WHEN game='League of Legends' THEN 'MOBA'
+WHEN game='Dota 2' THEN 'MOBA'
+WHEN game='Heroes of the Storm' THEN 'MOBA'
+WHEN game='Counter-Strike: Global Offensive' THEN 'FPS'
+WHEN game= 'DayZ' THEN 'Survival'
+WHEN game= 'ARK: Survival Evolved' THEN 'Survival'
+ELSE 'Other'
+END AS 'genre',
+COUNT(*)
+FROM stream
+GROUP BY game
+ORDER BY COUNT(*) DESC;
+/* TASK 8 
+ Let’s write a query that returns two columns:
+
+The hours of the time column
+The view count for each hour
+Lastly, filter the result with only the users in your country using a WHERE clause.*/
+SELECT
+   strftime('%H', time) AS 'hour', COUNT(*) AS 'view count'
+FROM stream
+WHERE country='PL'
+GROUP BY 1
+LIMIT 20;
+
+/* TASK 9
+The stream table and the chat table share a column: device_id.
+
+Let’s join the two tables on that column.
+*/
+
+SELECT * FROM stream
+JOIN chat
+ON stream.device_id=chat.device_id;
